@@ -6,7 +6,7 @@
   height: 150px
   z-index: 10
   background: rgb(0,0,0)
-  background: linear-gradient(180deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,0.40) 50%, rgba(255,255,255,0) 100%)
+  background: linear-gradient(180deg, rgba(0,0,0,.6) 0%, rgba(0,0,0,0.40) 50%, rgba(255,255,255,0) 100%)
 
 
   .logo
@@ -16,6 +16,8 @@
     font-weight: 400
 
   nav
+    display: flex
+    justify-content: flex-end
 
     a
       color: #fff
@@ -29,3 +31,11 @@
       &:last-child
         margin-right: 0
         padding-right: 0
+
+      
+      &.icon-search
+        width: 25px
+        height: 25px
+        position: relative
+        right: 0
+        background: transparent url("src/assets/header-search.png") center no-repeat
