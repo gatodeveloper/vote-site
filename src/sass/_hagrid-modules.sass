@@ -1,0 +1,34 @@
+@import "../../node_modules/normalize-scss/sass/normalize"
+@import "../../node_modules/hagrid.io/sass/hagrid-core/globals/vars"
+@import 'sass/vars'
+@import "../../node_modules/hagrid.io/sass/hagrid-core/globals/mixins"
+@import "../../node_modules/hagrid.io/sass/hagrid-core/globals/utils"
+@import "../../node_modules/hagrid.io/sass/hagrid-core/helpers/helpers"
+@import "../../node_modules/hagrid.io/sass/hagrid-core/grid/grid"
+
+
+.btn
+  display: inline-block
+  padding: 1em
+  border: none
+  background: $primary-color
+
+  &.btn-block
+    width: 100%
+
+
+  &.btn-vote
+    background-repeat: no-repeat
+    background-position: center
+    height: 50px
+
+    &.btn-vote-lg
+      height: 80px
+
+    &.btn-vote-up
+      background-image: url("src/assets/thumbs-up.png")
+      background-color: rgba($cyan, .85)
+
+    &.btn-vote-down
+      background-image: url("src/assets/thumbs-down.png")
+      background-color: rgba($yellow, .85)
