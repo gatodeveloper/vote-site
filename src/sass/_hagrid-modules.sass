@@ -11,16 +11,33 @@
   display: inline-block
   padding: 1em
   border: none
+  text-decoration: none
   background: $primary-color
 
   &.btn-block
     width: 100%
+
+  &.btn-outlet
+    background-color: transparent
+    border: 2px solid #fff
+    padding: .5em 1.5em
+    color: #fff
+    font-size: 20px
+
+    &.btn-outlet-black
+      border: 2px solid #333333
+      color: #333333
 
 
   &.btn-vote
     background-repeat: no-repeat
     background-position: center
     height: 50px
+    
+    &.btn-vote-sm
+      height: 35px
+      width: 35px
+      background-size: 20px
 
     &.btn-vote-lg
       height: 80px
@@ -32,3 +49,31 @@
     &.btn-vote-down
       background-image: url("src/assets/thumbs-down.png")
       background-color: rgba($yellow, .85)
+
+
+.__counter-votes
+  .__item
+    background-repeat: no-repeat
+    background-size: 25px
+    color: #fff
+
+    span
+      display: block
+      padding: 7px 20%
+      font-weight: 300
+      font-size: 30px
+
+      small
+        font-weight: 300
+        font-size: 20px
+
+    &.__up
+      background-image: url("src/assets/thumbs-up.png")
+      background-position: 5% center
+      background-color: rgba($cyan, .85)
+
+    &.__down
+      background-image: url("src/assets/thumbs-down.png")
+      background-position: 95% center
+      background-color: rgba($yellow, .85)
+      text-align: right

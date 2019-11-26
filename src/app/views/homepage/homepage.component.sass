@@ -1,0 +1,105 @@
+.top-notification
+  background-color: #ebebeb
+  padding: 1.5em
+
+  h3,
+  span,
+  p
+    color: #333333
+
+
+  h3
+    font-size: 37px,
+    margin: 0
+    font-weight: 700
+
+  span
+    font-size: 27px
+    font-weight: 300
+
+  p
+    font-size: 15px
+    font-weight: 300
+
+
+.section-title
+  font-size: 40px
+  font-weight: 300
+  color: #333333
+
+.grid-box-votes
+  display: flex
+  flex-flow: wrap
+  justify-content: space-between
+
+  .box-vote
+    display: flex
+    align-items: flex-end
+    background-image: url("src/assets/vote-bkg-1.png")
+    max-width: 492px
+    height: 550px
+    margin-bottom: 2.5em
+
+
+    .box-vote-content
+      padding: 1.5em
+      
+      h3,
+      p,
+      .__date b,
+      .__date span
+        color: #fff
+
+
+      h3
+        font-size: 45px
+        font-weight: 400
+        margin: 0
+
+      .__date
+        font-size: 14px
+        span
+          font-weight: 300
+
+
+      p
+        font-size: 16px
+        font-weight: 300
+
+      .__actions
+        button
+          margin-right: 1em
+
+      .btn-vote-now
+        background-color: transparent
+        border: 2px solid #fff
+        padding: 10px
+        color: #fff
+        font-size: 14px
+
+.banner-submit-name
+  background:  url("src/assets/submit-name.jpg") no-repeat
+  display: flex
+  justify-content: space-between
+  height: 80px
+  align-items: center
+  padding: 0 2em
+  
+  &:before
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100%
+    left: 0
+    top: 0
+    background-color: rgba(255,255, 255, .7)
+
+  b,
+  a
+    position: relative
+    z-index: 1
+  
+
+  b
+    font-size: 30px
+    font-weight: 300

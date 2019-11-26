@@ -1,1 +1,52 @@
-<p>homepage works!</p>
+<section class="main-page-wrapper p-2-y p-em">
+
+  <article class="top-notification">
+    <div class="gs">
+      <div class="lay-30">
+        <span>Speak out. Be heard. </span>
+        <h3>Be counted</h3>
+      </div>
+      <div class="lay-70">
+        <p>Rule of Thumb is a crowd sourced court of public opinion where anyone and everyone can speak out and speak freely. It’s easy: You share your opinion, we analyze and put the data in a public report.</p>
+      </div>
+    </div>
+  </article>
+
+
+  <h2 class="section-title">Votes</h2>
+
+  <section class="grid-box-votes">
+
+    <article class="box-vote" *ngFor="let a of [1,2,3,4]">
+      <div class="box-vote-inner">
+        <div class="box-vote-content">
+          <h3>Kanye West</h3>
+          <div class="__date">
+            <b>1 month ago <span>in Entertainment</span></b>
+          </div>
+          <p>Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.</p>
+          <section class="gs align-items-center __actions">
+            <button class="btn btn-vote btn-vote-sm btn-vote-up"></button>          
+            <button class="btn btn-vote btn-vote-sm btn-vote-down"></button>
+            <button class="btn btn-vote-now">Vote now</button>
+          </section>
+        </div>
+        <section class="gs __counter-votes">
+          <div class="lay __item __up">
+            <span>64<small>%</small></span>
+          </div>
+          <div class="lay __item __down">
+            <span>36<small>%</small></span>
+          </div>
+        </section>
+      </div>
+    </article>
+
+  </section>
+
+  <section class="banner-submit-name">
+    <b>Is there anyone else you would want us to add?</b>
+    <a href="" class="btn btn-outlet btn-outlet-black">Submit a Name</a>
+  </section>
+
+</section>
