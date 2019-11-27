@@ -4,6 +4,9 @@
   background-color: #ebebeb
   padding: 1.5em
 
+  .c-lay
+    min-width: 220px
+
   .__close
     position: absolute
     width: 20px
@@ -52,11 +55,20 @@
   .box-vote
     display: flex
     align-items: flex-end
-    //background-image: url("src/assets/vote-bkg-1.png")
-    max-width: 492px
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    //max-width: 492px
+    max-width: calc(50% - 20px)
     height: 550px
     margin-bottom: 2.5em
 
+    @media screen and (max-width: 800px)
+      max-width: 100%
+      width: 100%
+
+    .box-vote-inner
+      width: 100%
 
     .box-vote-content
       padding: 1.5em
@@ -96,11 +108,12 @@
 
 .banner-submit-name
   background:  url("src/assets/submit-name.jpg") no-repeat
+  background-size: cover
   display: flex
   justify-content: space-between
-  height: 80px
+  //height: 80px
   align-items: center
-  padding: 0 2em
+  padding: 1em 2em
   
   &:before
     content: ''
@@ -120,3 +133,10 @@
   b
     font-size: 30px
     font-weight: 300
+
+  a
+    text-align: center
+
+  @media screen and (max-width: 800px)
+    b
+      font-size: 20px

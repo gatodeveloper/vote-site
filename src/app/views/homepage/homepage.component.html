@@ -2,11 +2,11 @@
 
   <article class="top-notification" *ngIf="showTopBannerNotification">
     <div class="gs">
-      <div class="lay-25">
+      <div class="c-lay">
         <span>Speak out. Be heard. </span>
         <h3>Be counted</h3>
       </div>
-      <div class="lay-75 p-2-right p-em">
+      <div class="lay p-2-right p-em">
         <p>Rule of Thumb is a crowd sourced court of public opinion where anyone and everyone can speak out and speak freely. It’s easy: You share your opinion, we analyze and put the data in a public report.</p>
       </div>
       <button class="__close" (click)="showTopBannerNotification = false;"></button>
@@ -32,7 +32,7 @@
             <button class="btn btn-vote-now">Vote now</button>
           </section>
         </div>
-        <section class="gs __counter-votes">
+        <section class="gs keep-lay __counter-votes">
           <div class="lay __item __up" [style.width.%]="calculateVote(newsVote?.votes?.up, newsVote?.votes?.up, newsVote?.votes?.down)">
             <span>{{calculateVote(newsVote?.votes?.up, newsVote?.votes?.up, newsVote?.votes?.down)}}<small>%</small></span>
           </div>
