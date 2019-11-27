@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+//import { HttpModule, Http, XHRBackend, RequestOptions} from '@angular/http';
+import { HttpClient, HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +9,8 @@ import { MainHeaderComponent } from './components/main-header/main-header.compon
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { MainFooterComponent } from './components/main-footer/main-footer.component';
 import { TopBannerVoteComponent } from './components/top-banner-vote/top-banner-vote.component';
+
+import { VotesService } from 'src/app/services/votes/votes.service'; 
 
 @NgModule({
   declarations: [
@@ -18,9 +22,15 @@ import { TopBannerVoteComponent } from './components/top-banner-vote/top-banner-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    //HttpModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    //HttpModule,
+    HttpClientModule,
+    VotesService
+  ],
   bootstrap: [AppComponent]
 })
 

@@ -1,6 +1,6 @@
 <section class="main-page-wrapper p-2-y p-em">
 
-  <article class="top-notification">
+  <article class="top-notification" *ngIf="showTopBannerNotification">
     <div class="gs">
       <div class="lay-25">
         <span>Speak out. Be heard. </span>
@@ -9,7 +9,7 @@
       <div class="lay-75 p-2-right p-em">
         <p>Rule of Thumb is a crowd sourced court of public opinion where anyone and everyone can speak out and speak freely. It’s easy: You share your opinion, we analyze and put the data in a public report.</p>
       </div>
-      <button class="__close"></button>
+      <button class="__close" (click)="showTopBannerNotification = false;"></button>
     </div>
   </article>
 
@@ -18,14 +18,14 @@
 
   <section class="grid-box-votes">
 
-    <article class="box-vote" *ngFor="let a of [1,2,3,4]">
+    <article class="box-vote" *ngFor="let newsVote of newsVotes" [ngStyle]="{ 'background-image': 'url(' + newsVote.imageFeature + ')'}">
       <div class="box-vote-inner">
         <div class="box-vote-content">
-          <h3>Kanye West</h3>
+          <h3 [innerHtml]="newsVote.title"></h3>
           <div class="__date">
-            <b>1 month ago <span>in Entertainment</span></b>
+            <b>{{ newsVote?.date }}<span> in {{ newsVote?.category }}</span></b>
           </div>
-          <p>Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.</p>
+          <p [innerHtml]="newsVote.description"></p>
           <section class="gs align-items-center __actions">
             <button class="btn btn-vote btn-vote-sm btn-vote-up"></button>          
             <button class="btn btn-vote btn-vote-sm btn-vote-down"></button>
@@ -33,11 +33,11 @@
           </section>
         </div>
         <section class="gs __counter-votes">
-          <div class="lay __item __up">
-            <span>64<small>%</small></span>
+          <div class="lay __item __up" [style.width.%]="calculateVote(newsVote?.votes?.up, newsVote?.votes?.up, newsVote?.votes?.down)">
+            <span>{{calculateVote(newsVote?.votes?.up, newsVote?.votes?.up, newsVote?.votes?.down)}}<small>%</small></span>
           </div>
-          <div class="lay __item __down">
-            <span>36<small>%</small></span>
+          <div class="lay __item __down" [style.width.%]="calculateVote(newsVote?.votes?.down, newsVote?.votes?.up, newsVote?.votes?.down)">
+            <span>{{calculateVote(newsVote?.votes?.down, newsVote?.votes?.up, newsVote?.votes?.down)}}<small>%</small></span>
           </div>
         </section>
       </div>
