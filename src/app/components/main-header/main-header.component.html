@@ -1,10 +1,11 @@
 <header id="main-header">
   <section class="main-page-wrapper h-100">
     <div class="gs h-100 align-items-center">
-      <div class="lay-30">
+      <div class="lay-30 col-logo">
         <a href="" class="logo">Rule of Thumb.</a>
       </div>
-      <div class="lay-70 align-right hide-sm hide-xs">
+      <div class="lay-70 col-menu align-right" [ngClass]="{'__opened': mobileMenuOpened}">
+        <b class="menu-title">Menu</b>
         <nav>
           <a href="">Past Trials</a>
           <a href="">How It Works</a>
@@ -12,6 +13,7 @@
           <a href="" class="icon-search"></a>
         </nav>
       </div>
+      <div class="toggle-menu" [ngClass]="{'__opened': mobileMenuOpened}" (click)="mobileMenuOpened = !mobileMenuOpened"><span></span></div>
     </div>
   </section>
 </header>

@@ -1,3 +1,5 @@
+@import 'src/sass/vars'
+
 #main-header
   position: absolute
   top: 0
@@ -10,17 +12,79 @@
 
 
   .logo
-    color: #fff
+    color: $white
     font-size: 32px
     text-decoration: none
     font-weight: 400
+
+  .menu-title
+    color: $dark-grey
+    padding: 2em 0 2em
+    display: none
+
+  .toggle-menu
+    position: absolute
+    right: 10px
+    top: 23px
+    transition: .3s all
+    z-index: 10
+    display: none
+    width: 40px
+    height: 40px
+
+    span
+      display: block
+      width: 40px
+      height: 3px
+      background: $white
+      position: relative
+      transition: .3s all
+      top: 18px
+
+      &:before
+        content: ''
+        position: absolute
+        right: 0
+        top: -9px
+        display: block
+        width: 40px
+        height: 3px
+        background: $white
+        transition: .3s all
+
+      &:after
+        content: ''
+        position: absolute
+        right: 0
+        top: 9px
+        display: block
+        width: 40px
+        height: 3px
+        background: $white
+        transition: .3s all
+
+    &.__opened
+      span
+        height: 0px
+        background: $dark-grey
+
+        &:before
+          transform: rotate(45deg)
+          background: $dark-grey
+          top: 0
+
+        &:after
+          top: 0
+          background: $dark-grey
+          transform: rotate(-45deg)
+
 
   nav
     display: flex
     justify-content: flex-end
 
     a
-      color: #fff
+      color: $white
       font-size: 16px
       font-weight: 300
       text-decoration: none
@@ -39,3 +103,40 @@
         position: relative
         right: 0
         background: transparent url("src/assets/header-search.png") center no-repeat
+
+@media screen and (max-width: $grid-960)
+  #main-header
+    height: 80px
+
+    .toggle-menu
+      display: block
+
+    .col-logo
+      width: 100%
+
+    .col-menu
+      position: fixed
+      max-width: 80%
+      background: rgba(255, 255, 255, .95)
+      box-shadow: rgba(0, 0, 0, .9) 0 0 100px
+      top: 0
+      height: 100%
+      right: -100%
+      text-align: center
+      transition: .3s all
+
+      &.__opened
+        right: 0
+
+      .menu-title
+        display: block
+
+      nav
+        flex-direction: column
+
+        a
+          color: $dark-grey
+          font-weight: 400
+
+        .icon-search
+          display: none
