@@ -25,9 +25,19 @@ export class HomepageComponent implements OnInit {
   getNewsVotes(){
     this.votesService.getVoteList()
       .then( votes => {
+        console.log(votes)
         this.newsVotes = votes['data'];
       })
 
+  }
+
+  vote(newsDoc){
+    let vote = newsDoc.mySelectedVote;
+    this.votesService.vote(newsDoc._id, vote)
+      .then( result => {
+        newsDoc.votes = result['votes'];
+        newsDoc.mySelectedVote = null;
+      })    
   }
 
   calculateVote(value, up, down){

@@ -23,13 +23,13 @@
         <div class="box-vote-content">
           <h3 [innerHtml]="newsVote.title"></h3>
           <div class="__date">
-            <b>{{ newsVote?.date }}<span> in {{ newsVote?.category }}</span></b>
+            <b>{{ newsVote?.createAt | date }}<span> in {{ newsVote?.category }}</span></b>
           </div>
           <p [innerHtml]="newsVote.description"></p>
           <section class="gs align-items-center __actions">
-            <button class="btn btn-vote btn-vote-sm btn-vote-up"></button>          
-            <button class="btn btn-vote btn-vote-sm btn-vote-down"></button>
-            <button class="btn btn-vote-now">Vote now</button>
+            <button class="btn btn-vote btn-vote-sm btn-vote-up" (click)="newsVote.mySelectedVote = 'up'"></button>          
+            <button class="btn btn-vote btn-vote-sm btn-vote-down" (click)="newsVote.mySelectedVote = 'down'"></button>
+            <button class="btn btn-vote-now" (click)="vote(newsVote)" [ngClass]="{'__visible': newsVote?.mySelectedVote}">Vote now</button>
           </section>
         </div>
         <section class="gs keep-lay __counter-votes">
